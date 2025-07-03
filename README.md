@@ -1,1 +1,1 @@
-# Java - Spring - Springboot Project
+# Java + Spring + Springboot + Thymeleaf - Project
