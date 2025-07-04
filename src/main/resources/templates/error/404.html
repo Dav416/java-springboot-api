@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+    <h1>Ha ocurrido un error</h1>
+    <h2>Esto ocurre al primer inicio de sesión en chrome <br> puedes volver al inicio de sesión y tratar de nuevo o usar edge.</h2>
+    <p th:text="${status} + ' - ' + ${error}"></p>
+    <p th:text="${message}"></p>
+    <a th:href="@{/login}">Ir al inicio de sesión</a>
+</body>
+</html>

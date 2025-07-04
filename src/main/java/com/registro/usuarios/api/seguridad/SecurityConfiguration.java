@@ -23,11 +23,13 @@ public class SecurityConfiguration {
         this.usuarioServicio = usuarioServicio;
     }
 
+    // Encriptador de contraseñas
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+    // Proveedor de autenticación
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
@@ -36,11 +38,13 @@ public class SecurityConfiguration {
         return authProvider;
     }
 
+    // Manejador de autenticación
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
 
+    // Filtrar los archivos permitidos
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
