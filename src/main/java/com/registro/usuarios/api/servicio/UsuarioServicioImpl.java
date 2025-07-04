@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
 
 
 // Archivo de implementación para guardar usuarios
-
 @Service
 public class UsuarioServicioImpl implements UsuarioServicio{
     
@@ -31,7 +30,7 @@ public class UsuarioServicioImpl implements UsuarioServicio{
         this.usuarioRepositorio = usuarioRepositorio;
     }
     
-    
+    // Crear usuario y encriptar contraseña
     @Override
     public Usuario guardar(UsuarioRegistroDTO registroDTO) {
         Usuario usuario = new Usuario(registroDTO.getNombre(),
@@ -40,6 +39,7 @@ public class UsuarioServicioImpl implements UsuarioServicio{
         return usuarioRepositorio.save(usuario);
     }
 
+    // Obtener usuario validando el correo electrónico
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Usuario usuario = usuarioRepositorio.findByEmail(username);
