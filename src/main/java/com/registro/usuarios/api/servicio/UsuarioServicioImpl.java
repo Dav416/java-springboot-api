@@ -6,6 +6,7 @@ import com.registro.usuarios.api.modelo.Usuario;
 import com.registro.usuarios.api.repositorio.UsuarioRepositorio;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -52,6 +53,10 @@ public class UsuarioServicioImpl implements UsuarioServicio{
     private Collection<? extends GrantedAuthority> mapearAutoridadesRoles(Collection<Rol> roles){
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getNombre())).collect(Collectors.toList());
     }
-    
+
+    @Override
+    public List<Usuario> listarUsuarios() {
+        return usuarioRepositorio.findAll();
+    }
     
 }
