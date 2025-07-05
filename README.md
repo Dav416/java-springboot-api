@@ -18,7 +18,7 @@ This is a Java web application that allows you to create a user, log in and list
 3. Configure the database connection in the `src/main/resources/application.properties` file
 4. Clean and build the project
 5. Run the project
-6. [localhost:8080](http://localhost:8080/)
+6. Get into [localhost:8080](http://localhost:8080/)
 
 ## How to run the project in NetBeans
 1. Press the F6 key to run the project
